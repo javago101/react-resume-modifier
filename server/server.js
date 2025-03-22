@@ -14,10 +14,7 @@ app.use(express.json());
 // MongoDB connection
 const connectDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/jobSearch', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
+        await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/jobSearch');
         console.log('Connected to MongoDB');
     } catch (err) {
         console.error('MongoDB connection error:', err);
@@ -91,7 +88,21 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-}); 
+// Start server with port fallback
+const startServer = async () => {
+    try {
+        await app.listen(PORT);
+        console.log(`Server running on port ${PORT}`);
+    } catch (error) {
+        if (error.code === 'EADDRINUSE') {
+            console.log(`Port ${PORT} is busy, trying port ${PORT + 1}`);
+            await app.listen(PORT + 1);
+            console.log(`Server running on port ${PORT + 1}`);
+        } else {
+            console.error('Failed to start server:', error);
+            process.exit(1);
+        }
+    }
+};
+
+startServer(); 
