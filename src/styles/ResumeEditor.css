@@ -1,0 +1,205 @@
+.resume-editor {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.editor-header h2 {
+    margin: 0;
+    color: #2196F3;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.editor-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.editor-actions button:first-child {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.editor-actions button:not(:first-child) {
+    background-color: #2196F3;
+    color: white;
+}
+
+.editor-actions button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.editor-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+}
+
+.resume-sections {
+    border-right: 1px solid #eee;
+    padding-right: 2rem;
+}
+
+.resume-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.resume-section.active {
+    background-color: #e3f2fd;
+    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+}
+
+.resume-section h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    cursor: pointer;
+}
+
+.resume-section h3:hover {
+    color: #2196F3;
+}
+
+.section-content {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.content-item {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.suggestions-panel {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.suggestions-panel h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.analyzing {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.suggestion-item {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item p {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.suggestion-item button {
+    padding: 0.3rem 0.8rem;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.suggestion-item button:hover {
+    background-color: #1976D2;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+.loading {
+    color: #2196F3;
+}
+
+.error {
+    color: #f44336;
+}
+
+.no-suggestions {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .resume-editor {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .editor-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .editor-content {
+        grid-template-columns: 1fr;
+    }
+
+    .resume-sections {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .editor-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .editor-actions button {
+        flex: 1;
+        min-width: 150px;
+        text-align: center;
+    }
+} 

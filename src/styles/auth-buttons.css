@@ -1,0 +1,66 @@
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.auth-button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.auth-button.signin {
+    color: #2196F3;
+    border: 1px solid #2196F3;
+}
+
+.auth-button.signin:hover {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.auth-button.signup {
+    background-color: #2196F3;
+    color: white;
+}
+
+.auth-button.signup:hover {
+    background-color: #1976D2;
+}
+
+.auth-button.profile {
+    color: #2196F3;
+    border: 1px solid #2196F3;
+    background: none;
+}
+
+.auth-button.profile:hover {
+    background-color: rgba(33, 150, 243, 0.1);
+}
+
+.auth-button.signout {
+    color: #f44336;
+    border: 1px solid #f44336;
+    background: none;
+}
+
+.auth-button.signout:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+@media (max-width: 600px) {
+    .auth-buttons {
+        gap: 0.5rem;
+    }
+    
+    .auth-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+} 
